@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Downloads</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #121212;
+            color: #E0E0E0;
+        }
+        
+        header {
+            background-color: #1F1F1F;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+        
+        nav ul li {
+            margin: 0 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #1E88E5;
+        }
+        
+        .hero {
+            background: url('hero-bg.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 150px 20px;
+            position: relative;
+        }
+        
+        .hero-overlay {
+            background: rgba(31, 31, 31, 0.8);
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h2 {
+            font-size: 2.5em;
+            margin: 0 0 10px;
+        }
+        
+        .hero p {
+            font-size: 1.2em;
+            margin: 0 0 20px;
+        }
+        
+        .hero .btn {
+            background-color: #1E88E5;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-size: 1em;
+        }
+        
+        .hero .btn:hover {
+            background-color: #1565C0;
+        }
+        
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2em;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: #1E88E5;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        .downloads-section, .about-section, .contact-section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #1F1F1F;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .download-item {
+            padding: 20px;
+            margin: 20px 0;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .download-item:last-child {
+            border-bottom: none;
+        }
+        
+        .download-item h3 {
+            margin: 0;
+            color: #E0E0E0;
+        }
+        
+        .download-item p {
+            color: #B0B0B0;
+        }
+        
+        .download-item .btn {
+            background-color: #1E88E5;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .download-item .btn:hover {
+            background-color: #1565C0;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        form label {
+            margin: 5px 0;
+            font-weight: bold;
+            color: #E0E0E0;
+        }
+        
+        form input, form textarea {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #424242;
+            width: 100%;
+            font-size: 1em;
+            background-color: #333;
+            color: white;
+        }
+        
+        form button {
+            background-color: #1E88E5;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1em;
+        }
+        
+        form button:hover {
+            background-color: #1565C0;
+        }
+        
+        footer {
+            background-color: #1F1F1F;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .download-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Free Download Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#downloads">Downloads</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="home">
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2>Welcome to Free Download Hub</h2>
+                <p>Download programs and other files for free!</p>
+                <a href="#downloads" class="btn">Browse Downloads</a>
+            </div>
+        </section>
+        <section id="downloads" class="downloads-section">
+            <h2 class="section-title">Downloads</h2>
+            <div class="download-item">
+                <div>
+                    <h3>Program 1</h3>
+                    <p>Description of Program 1.</p>
+                </div>
+                <a href="downloads/program1.zip" class="btn download-btn">Download</a>
+            </div>
+            <div class="download-item">
+                <div>
+                    <h3>Program 2</h3>
+                    <p>Description of Program 2.</p>
+                </div>
+                <a href="downloads/program2.zip" class="btn download-btn">Download</a>
+            </div>
+            <!-- Add more download items as needed -->
+        </section>
+        <section id="about" class="about-section">
+            <h2 class="section-title">About Us</h2>
+            <p>Information about the site.</p>
+        </section>
+        <section id="contact" class="contact-section">
+            <h2 class="section-title">Contact Us</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit" class="btn">Send</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Free Download Hub. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for your message!');
+        });
+    </script>
+</body>
+</html>
