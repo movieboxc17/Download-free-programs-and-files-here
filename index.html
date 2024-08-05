@@ -6,19 +6,20 @@
     <title>Free Downloads</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #f8f9fa;
-            color: #343a40;
+            background-color: #f0f2f5;
+            color: #333;
         }
         
         header {
-            background-color: #343a40;
+            background-color: #007BFF;
             color: white;
-            padding: 10px 0;
+            padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         nav ul {
@@ -30,48 +31,88 @@
         }
         
         nav ul li {
-            margin: 0 15px;
+            margin: 0 20px;
         }
         
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s;
         }
         
         nav ul li a:hover {
-            text-decoration: underline;
+            color: #d1ecf1;
         }
         
         .hero {
             background: url('hero-bg.jpg') no-repeat center center/cover;
             color: white;
             text-align: center;
-            padding: 100px 20px;
+            padding: 150px 20px;
+            position: relative;
+        }
+        
+        .hero-overlay {
+            background: rgba(0, 123, 255, 0.7);
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h2 {
+            font-size: 2.5em;
+            margin: 0 0 10px;
+        }
+        
+        .hero p {
+            font-size: 1.2em;
+            margin: 0 0 20px;
         }
         
         .hero .btn {
-            background-color: #0066cc;
+            background-color: #28a745;
             color: white;
-            padding: 10px 20px;
+            padding: 15px 30px;
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s;
+            font-size: 1em;
         }
         
         .hero .btn:hover {
-            background-color: #005bb5;
+            background-color: #218838;
         }
         
         main {
-            padding: 20px;
+            padding: 40px 20px;
             max-width: 1200px;
             margin: auto;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
+            font-size: 2em;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: #007BFF;
+            margin: 10px auto;
+            border-radius: 2px;
         }
         
         .downloads-section, .about-section, .contact-section {
@@ -79,17 +120,20 @@
             padding: 20px;
             background-color: white;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         
         .download-item {
-            background-color: #f4f4f4;
             padding: 20px;
-            margin: 10px 0;
-            border-radius: 5px;
+            margin: 20px 0;
+            border-bottom: 1px solid #e9ecef;
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+        
+        .download-item:last-child {
+            border-bottom: none;
         }
         
         .download-item h3 {
@@ -97,7 +141,7 @@
         }
         
         .download-item .btn {
-            background-color: #28a745;
+            background-color: #007BFF;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -106,7 +150,7 @@
         }
         
         .download-item .btn:hover {
-            background-color: #218838;
+            background-color: #0056b3;
         }
         
         form {
@@ -116,24 +160,27 @@
         
         form label {
             margin: 5px 0;
+            font-weight: bold;
         }
         
         form input, form textarea {
-            padding: 10px;
-            margin-bottom: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
             border-radius: 5px;
-            border: 1px solid #ccc;
+            border: 1px solid #ced4da;
             width: 100%;
+            font-size: 1em;
         }
         
         form button {
-            background-color: #007bff;
+            background-color: #007BFF;
             color: white;
-            padding: 10px;
+            padding: 15px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
+            font-size: 1em;
         }
         
         form button:hover {
@@ -144,7 +191,7 @@
             background-color: #343a40;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px 0;
             position: fixed;
             width: 100%;
             bottom: 0;
@@ -172,9 +219,12 @@
     </header>
     <main id="home">
         <section class="hero">
-            <h2>Welcome to Free Download Hub</h2>
-            <p>Download programs and other files for free!</p>
-            <a href="#downloads" class="btn">Browse Downloads</a>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2>Welcome to Free Download Hub</h2>
+                <p>Download programs and other files for free!</p>
+                <a href="#downloads" class="btn">Browse Downloads</a>
+            </div>
         </section>
         <section id="downloads" class="downloads-section">
             <h2 class="section-title">Downloads</h2>
